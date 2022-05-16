@@ -2,7 +2,7 @@ import { memo } from 'react';
 import useConsole from '../useConsole';
 import useForceRender from '../useForceRender';
 
-function ChildA() {
+function ChildA(temp) {
   const { showName } = useConsole('ChildA');
   // useForceRender(1000);
 

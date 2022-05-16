@@ -1,17 +1,20 @@
+import { useCallback } from 'react';
 import useConsole from '../useConsole';
 import useForceRender from '../useForceRender';
 import ChildA from './ChildA';
 
 function Parent() {
   const { showName } = useConsole('Parent');
-  useForceRender(1000);
+  useForceRender(3000);
+
+  const temp = useCallback(() => console.log('useCallback'), []);
 
   showName();
 
   return (
     <div style={{ width: '500px', backgroundColor: 'beige', height: '500px' }}>
       This is Parent
-      <ChildA />
+      <ChildA temp={temp} />
     </div>
   );
 }
