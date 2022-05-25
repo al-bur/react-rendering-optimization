@@ -1,5 +1,5 @@
-export default function useConsole(name) {
-  const showName = () => console.log(`${name}is Rendered`);
+export default function useConsole(component) {
+  const showIsRendered = () => console.log(`${component}is Rendered`);
 
-  return { showName };
+  return { showIsRendered };
 }
